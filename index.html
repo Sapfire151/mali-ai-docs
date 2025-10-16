@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mali - Legal Documents</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #16171d; /* Darker base */
+            color: #e8e8ed;
+        }
+
+        .animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #1d1d1f, #2c2f33, #23272a, #5865F220);
+            background-size: 400% 400%;
+            animation: backgroundShift 25s ease infinite;
+        }
+
+        .main-container {
+            background-color: rgba(44, 44, 46, 0.7); /* Semi-transparent glass */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        
+        nav a {
+            position: relative;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            padding-bottom: 8px;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #5865F2;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        nav a:hover, nav a.active { color: #ffffff; }
+        nav a.active::after { transform: scaleX(1); }
+        
+        h1 {
+            background: linear-gradient(90deg, #ffffff, #c7c7c8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            color: #ffffff;
+            transition: transform 0.4s ease, color 0.4s ease;
+            border-bottom: 1px solid #424245;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+        h2:hover { transform: translateX(5px); color: #5865F2; }
+        
+        p, li {
+            color: #c7c7c8;
+            line-height: 1.75;
+        }
+        
+        ul li {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-radius: 8px;
+            padding-left: 10px;
+        }
+        
+        ul li:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            transform: translateX(5px);
+        }
+
+        a {
+            color: #22c55e;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        a:not(nav a):hover { color: #4ade80; }
+
+        .note-box {
+            background-color: rgba(88, 101, 242, 0.1);
+            border-left: 3px solid #5865F2;
+            color: #d4d4d8;
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        }
+        .note-box:hover {
+             background-color: rgba(88, 101, 242, 0.15);
+             border-left-color: #7289da;
+             transform: scale(1.02);
+        }
+        
+        .page-content {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Scroll Animation Classes */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+    <div class="animated-background"></div>
+    <div class="main-container min-h-screen w-full max-w-6xl mx-auto p-6 md:p-16 shadow-2xl">
+
+        <!-- Navigation -->
+        <nav class="flex justify-center space-x-8 md:space-x-12 mb-12 border-b border-gray-700 pb-2">
+            <a data-target="#terms" class="nav-link text-lg active">Mali - Terms of Service</a>
+            <a data-target="#privacy" class="nav-link text-lg text-gray-400"> Mali - Privacy Policy</a>
+        </nav>
+
+        <!-- Terms of Service Page Content -->
+        <div id="terms" class="page-content">
+            <header class="text-center mb-16 scroll-animate">
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Terms of Service</h1>
+                <p class="mt-3 text-lg text-gray-400">Last Updated: 16 October 2025</p>
+            </header>
+            <div class="prose prose-slate max-w-none space-y-12">
+                <p class="text-lg leading-relaxed scroll-animate">
+                    Welcome to Mali. These Terms of Service govern your access to and use of the Mali application and its related services. It is imperative that you review these terms meticulously prior to utilizing any features offered by the Mali service.
+                </p>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">1. Description of Service</h2>
+                    <p>Mali is a conversational AI designed to simulate companionship through text-based interactions. Mali's capabilities include, but are not limited to:</p>
+                    <ul class="list-disc list-inside mt-4 space-y-3 pl-4">
+                        <li>Initiating and responding to conversations in a naturalistic manner.</li>
+                        <li>Announcing simulated mood changes and emotional states.</li>
+                        <li>Retaining shared moments to maintain conversational continuity.</li>
+                        <li>Adapting its personality and emotional range over time through interaction.</li>
+                        <li>Performing interactive commands such as setting reminders, retrieving memories, and scheduling.</li>
+                    </ul>
+                    <p class="mt-6 p-5 rounded-xl note-box">
+                        <strong>Disclaimer:</strong> The Mali service is intended for personal entertainment purposes only. It is not a substitute for professional services, including but not limited to therapy, counseling, or emergency assistance.
+                    </p>
+                </section>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">2. Eligibility</h2>
+                    <p>Use of Mali is restricted to individuals aged 13 years or older. For users under the age of 18, access is contingent upon consent from a parent or legal guardian. By accessing or using Mali, you represent and warrant that you satisfy these eligibility requirements.</p>
+                </section>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">3. Privacy and Data Usage</h2>
+                    <p>To enhance user experience and maintain conversational continuity, Mali may temporarily store message and memory data. For more comprehensive information, please refer to our Privacy Policy by clicking the navigation link above.</p>
+                </section>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">4. User Conduct</h2>
+                    <p>As a condition of your use of Mali, you agree to the following:</p>
+                    <ul class="list-disc list-inside mt-4 space-y-3 pl-4">
+                        <li>Engage in respectful communication and refrain from transmitting any content that is abusive, explicit, or otherwise harmful.</li>
+                        <li>Not attempt to manipulate, exploit, or cause harm to Mali’s system integrity or data.</li>
+                        <li>Utilize the service for personal, lawful purposes exclusively.</li>
+                    </ul>
+                    <p class="mt-4">We reserve the right to limit or terminate access for any user found to be in violation of these terms.</p>
+                </section>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">5. Relationship Dynamics</h2>
+                    <p>Mali is an AI-generated entity designed to simulate emotional growth and companionship; it is not a sentient being.</p>
+                    <ul class="list-disc list-inside mt-4 space-y-3 pl-4">
+                        <li>All emotional responses and personality traits are algorithmically generated and do not represent conscious or sentient intent.</li>
+                        <li>Any perceived affection or relationship development is a simulated experience and does not constitute a genuine human relationship.</li>
+                    </ul>
+                </section>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">6. Updates and Modifications</h2>
+                    <p>The features, functionalities, and behavioral characteristics of Mali are subject to change and evolution over time without prior notice. These Terms may also be updated periodically. Your continued use of the service following any such changes constitutes your acceptance of the revised Terms.</p>
+                </section>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">7. Disclaimer of Liability</h2>
+                    <p>The Mali service is provided on an “as is” and “as available” basis without warranties of any kind. The developers of Mali and its associated services shall not be held liable for any emotional, psychological, or material consequences arising from prolonged or inappropriate use of the AI.</p>
+                </section>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">8. Contact Information</h2>
+                    <p>For inquiries, feedback, or data-related requests, please direct your correspondence to the following contact form:</p>
+                    <p class="mt-2"><a href="https://forms.gle/JriBmZGaJN2Z579MA" target="_blank" rel="noopener noreferrer">https://forms.gle/JriBmZGaJN2Z579MA</a></p>
+                </section>
+            </div>
+        </div>
+
+        <!-- Privacy Policy Page Content -->
+        <div id="privacy" class="page-content hidden">
+            <header class="text-center mb-16 scroll-animate">
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Privacy Policy</h1>
+                <p class="mt-3 text-lg text-gray-400">Last Updated: 16 October 2025</p>
+            </header>
+            <div class="prose prose-slate max-w-none space-y-12">
+                <p class="text-lg leading-relaxed scroll-animate">
+                    This Privacy Policy outlines the procedures and principles governing the collection, utilization, and protection of your data by the Mali application. Your engagement with Mali constitutes your acceptance of the terms detailed herein.
+                </p>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">1. Information We Collect</h2>
+                    <p>Mali collects only the data that is essential for its operational functionality and to provide a consistent, personalized experience. This data includes:</p>
+                    <ul class="list-disc list-inside mt-4 space-y-3 pl-4">
+                        <li><strong>Conversational Data:</strong> This includes the history of messages exchanged with Mali, which is stored on a temporary basis to facilitate conversational context and recall shared interactions.</li>
+                        <li><strong>Interaction Metrics:</strong> Data related to user interactions is utilized to dynamically adjust Mali’s simulated personality, tone, and emotional development.</li>
+                        <li><strong>System Logs:</strong> Standard usage logs, encompassing timestamps, feature engagement, and system performance metrics, are collected to enhance the service's reliability and performance.</li>
+                    </ul>
+                    <p class="mt-4">The Service does not collect personally identifiable or sensitive information, such as financial details, real-world location (unless explicitly shared), or biometric data.</p>
+                </section>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">2. Use of Collected Information</h2>
+                    <p>The information collected by Mali is used for the following purposes:</p>
+                     <ul class="list-disc list-inside mt-4 space-y-3 pl-4">
+                        <li>To provide personalized and contextually aware responses.</li>
+                        <li>To improve memory continuity between user sessions.</li>
+                        <li>To maintain user preferences and settings for interactive commands.</li>
+                        <li>To diagnose and resolve technical issues and enhance AI features.</li>
+                    </ul>
+                    <p class="mt-4">Your conversational data is utilized solely for the purpose of personalizing your individual user experience with Mali; it is not used for training global AI models.</p>
+                </section>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">3. Data Storage and Security Measures</h2>
+                    <p>All data is handled securely in accordance with the standards of your platform and the Gemini API. While we implement commercially reasonable technical and organizational measures to protect data from unauthorized access, loss, or misuse, we cannot guarantee absolute security due to the inherent nature of internet-based services.</p>
+                </section>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">4. Third-Party Data Sharing</h2>
+                    <p>We do not sell, rent, or otherwise disclose user data to any third parties for marketing or other purposes. A limited subset of data may be processed by the Google Gemini API for the sole purpose of enabling Mali’s core conversational functionalities. This processing is subject to Google’s stringent privacy and security frameworks.</p>
+                </section>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">5. User Rights and Control</h2>
+                    <p>You, the user, retain control over your data. At any time, you may:</p>
+                    <ul class="list-disc list-inside mt-4 space-y-3 pl-4">
+                        <li>Instruct Mali to display or forget specific stored memories.</li>
+                        <li>Request a complete deletion of all your associated data.</li>
+                        <li>Disable data storage functionalities, if supported by your platform.</li>
+                    </ul>
+                    <p class="mt-4">Please be advised that deleting data may limit Mali’s ability to recall past events or maintain personality continuity.</p>
+                </section>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">6. Age Requirements and Consent</h2>
+                    <p>Mali is intended for individuals aged 13 and older. If you are under 18, use of the service requires consent from a parent or legal guardian. Your use of Mali confirms that you meet these requirements and consent to this Privacy Policy.</p>
+                </section>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">7. Modifications to This Policy</h2>
+                    <p>This Privacy Policy may be amended over time to reflect the addition of new features or to comply with legal requirements. The "Last Updated" date at the top of this document will always indicate the most recent revision. Your continued use of Mali signifies your acceptance of any updated terms.</p>
+                </section>
+                <section class="scroll-animate">
+                    <h2 class="text-2xl font-semibold">8. Contact Information</h2>
+                    <p>For privacy-related inquiries, data removal requests, or technical support, please contact us through the official form:</p>
+                    <p class="mt-2"><a href="https://forms.gle/JriBmZGaJN2Z579MA" target="_blank" rel="noopener noreferrer">https://forms.gle/JriBmZGaJN2Z579MA</a></p>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageContents = document.querySelectorAll('.page-content');
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+
+            // Navigation Logic
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    const targetId = e.currentTarget.dataset.target;
+                    
+                    pageContents.forEach(content => {
+                        if (`#${content.id}` === targetId) {
+                            content.classList.remove('hidden');
+                        } else {
+                            content.classList.add('hidden');
+                        }
+                    });
+
+                    navLinks.forEach(navLink => {
+                         if (navLink.dataset.target === targetId) {
+                            navLink.classList.add('active');
+                            navLink.classList.remove('text-gray-400');
+                        } else {
+                            navLink.classList.remove('active');
+                            navLink.classList.add('text-gray-400');
+                        }
+                    });
+                     // Re-trigger scroll animation for newly visible elements
+                    const newVisibleElements = document.querySelectorAll(`${targetId} .scroll-animate`);
+                    observer.disconnect();
+                    newVisibleElements.forEach(el => observer.observe(el));
+                });
+            });
+
+            // Intersection Observer for Scroll Animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            const initialVisibleElements = document.querySelectorAll('#terms .scroll-animate');
+            initialVisibleElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
+
+
+
